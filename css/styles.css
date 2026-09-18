@@ -1,0 +1,120 @@
+/* ForgeFit custom styles */
+:root {
+  --forge: #00d4aa;
+  --forge-dark: #00b894;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.safe-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.card {
+  background-color: #1a1d24;
+  border-radius: 1rem;
+  border: 1px solid rgba(31, 41, 55, 0.6);
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary {
+  background-color: #00d4aa;
+  color: #0a0c10;
+  font-weight: 700;
+  border-radius: 0.75rem;
+  padding: 0.875rem 1.5rem;
+  transition: all 0.15s;
+  box-shadow: 0 10px 15px -3px rgba(0, 212, 170, 0.2);
+}
+.btn-primary:hover { background-color: #34d3ad; }
+.btn-primary:active { background-color: #00b894; transform: scale(0.98); }
+
+.btn-secondary {
+  background-color: #1f2937;
+  color: white;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.25rem;
+  transition: all 0.15s;
+}
+.btn-secondary:hover { background-color: #374151; }
+.btn-secondary:active { transform: scale(0.98); }
+
+.btn-ghost {
+  background: transparent;
+  color: #d1d5db;
+  font-weight: 500;
+  border-radius: 0.75rem;
+  padding: 0.625rem 1rem;
+  transition: all 0.15s;
+}
+.btn-ghost:hover { background-color: rgba(31, 41, 55, 0.6); }
+
+.input {
+  width: 100%;
+  background-color: #12141a;
+  border: 1px solid #374151;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1rem;
+  color: white;
+  transition: all 0.15s;
+}
+.input::placeholder { color: #6b7280; }
+.input:focus {
+  outline: none;
+  border-color: #00d4aa;
+  box-shadow: 0 0 0 2px rgba(0, 212, 170, 0.3);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.125rem 0.625rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.recovery-bar {
+  height: 8px;
+  border-radius: 9999px;
+  background: #1f2937;
+  overflow: hidden;
+}
+.recovery-bar > div {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+@keyframes pulse-forge {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4); }
+  50% { box-shadow: 0 0 0 12px rgba(0, 212, 170, 0); }
+}
+.timer-active {
+  animation: pulse-forge 1.5s infinite;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #374151; border-radius: 3px; }
+
+@media (min-width: 1024px) {
+  #bottom-nav { display: none !important; }
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.chart-wrap {
+  position: relative;
+  height: 220px;
+}
